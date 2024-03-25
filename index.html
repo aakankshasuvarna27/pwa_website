@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hair Accessories Store</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="manifest" href="manifest.json" />
+  </head>
+  <body>
+    <header>
+      <h1>Hair Accessories Store</h1>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Products</a></li>
+          <li><a href="#">Cart</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="product-listing">
+        <div class="product">
+          <img src="/images/bow_clip.jpg" alt="Hair Accessory 1" />
+          <h2>Hair Accessory 1</h2>
+          <p>Description of the hair accessory.</p>
+          <button>Add to Cart</button>
+        </div>
+        <div class="product">
+          <img src="/images/scrunchies.jpg" alt="Hair Accessory 2" />
+          <h2>Hair Accessory 2</h2>
+          <p>Description of the hair accessory.</p>
+          <button>Add to Cart</button>
+        </div>
+        <!-- Add more products here -->
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2024 Hair Accessories Store</p>
+    </footer>
+    <script src="script.js"></script>
+    <!-- Register service worker -->
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", function () {
+          navigator.serviceWorker.register("/service-worker.js").then(
+            function (registration) {
+              console.log(
+                "Service Worker registered with scope:",
+                registration.scope
+              );
+            },
+            function (err) {
+              console.log("Service Worker registration failed:", err);
+            }
+          );
+        });
+      }
+    </script>
+  </body>
+</html>
